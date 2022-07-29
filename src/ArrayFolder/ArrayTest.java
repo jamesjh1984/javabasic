@@ -3,8 +3,7 @@ package ArrayFolder;
 public class ArrayTest {
 
 	public static void main(String[] args) {
-
-		
+				
 		// int array initֵ
 		int[] arr1 = new int[4];
 
@@ -47,12 +46,12 @@ public class ArrayTest {
 		
 		
 		/*
-		 * 1. define a int arraym, include 10 elements, ransom int number 
+		 * 1. generate a random int array, include 10 elements
 		 * 2. calculate all elements max, min, sum, average value 
 		 * 3. all int number is greater than 10
 		 */
 		
-		// 1. define a int arraym, include 10 elements, ransom int number 
+		// 1. define a int array, include 10 elements, ransom int number
 		int[] arr6 = new int[10];
 		
 		for(int i=0; i<arr6.length; i++) {
