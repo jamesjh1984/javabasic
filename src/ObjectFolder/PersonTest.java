@@ -1,7 +1,11 @@
 package ObjectFolder;
 
 
-// 对象
+/**
+ * 对象
+ *
+ * 属性（成员变量） vs 局部变量
+ */
 public class PersonTest {
 
     public static void main(String[] args) {
@@ -66,19 +70,19 @@ public class PersonTest {
 // 类
 class Person {
 
+    // 属性(成员变量)
     String name;
     int age = 18;
     boolean isMale;
 
-
+    // 局部变量(方法内部): language, food
     public void eat() {
-        System.out.println("eating. ");
+        String food = "noodle";
+        System.out.println("eating " + food);
     }
-
     public void sleep() {
         System.out.println("sleeping. ");
     }
-
     public void talk(String language) {
         System.out.println("talking " + language + ". ");
     }
