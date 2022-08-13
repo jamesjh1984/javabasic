@@ -29,6 +29,14 @@ public class ArrayUtilTest {
         int avgInt = arrayUtil.getAvg(arr);
         System.out.println("avgInt => " + avgInt);
 
+        int dest = 2;
+        int destInt = arrayUtil.getIndex(arr,dest);
+        System.out.println("destInt[" + dest + "] => " + destInt);
+
+
+        arrayUtil.reverse(arr);
+        System.out.println("reverseInt => " + Arrays.toString(arr));
+
 
 
     }

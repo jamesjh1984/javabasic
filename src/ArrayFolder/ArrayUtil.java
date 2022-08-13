@@ -60,8 +60,35 @@ public class ArrayUtil {
         return avg;
     }
 
-    // 反转数组
+    // 反转int数组
     public void reverse(int[] arr) {
+
+        // array reverse #1
+        for(int i=0; i<arr.length/2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
+        }
+
+    }
+
+    // 反转String数组
+    public void reverse(String[] arr) {
+
+        // array reverse #1
+        for(int i=0; i<arr.length/2; i++) {
+            String temp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
+        }
+
+
+        // array reverse #2
+//		for(int i=0,j=arr1.length-1; i<j; i++,j--) {
+//			String temp = arr1[i];
+//			arr1[i] = arr1[j];
+//			arr1[j] = temp;
+//		}
 
     }
 
@@ -82,7 +109,8 @@ public class ArrayUtil {
 
     // 查找指定数组元素
     public int getIndex(int[] arr, int dest) {
-        return 0;
+
+        return arr[dest];
     }
 
 
