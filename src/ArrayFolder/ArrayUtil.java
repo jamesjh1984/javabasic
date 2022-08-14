@@ -1,9 +1,19 @@
 package ArrayFolder;
 
+import ObjectFolder.ObjectUtil;
+
 /**
  * 自定义数组工具类
  */
 public class ArrayUtil {
+
+
+    public static void swap(int[] data, int i, int j) {
+        int temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
+    }
+
 
 
     // 求数组最大值
@@ -45,6 +55,8 @@ public class ArrayUtil {
 
         return sum;
     }
+
+
 
     // 求数组平均值
     public int getAvg(int[] arr) {
@@ -97,10 +109,62 @@ public class ArrayUtil {
         return null;
     }
 
-    // 数组排序
-    public void sort(int[] arr) {
 
+
+
+    // 1. 冒泡排序
+    public static void popSort(int[] arr) {
+        System.out.println("1. popSort...");
+
+        for(int i=0; i<arr.length-1; i++) {
+            for(int j=0; j<arr.length-1-i; j++) {
+                if(arr[j] > arr[j+1]) {
+
+                    swap(arr, j, j+1);
+
+                    // int temp = arr[j];
+                    // arr[j] = arr[j+1];
+                    // arr[j+1] = temp;
+                }
+            }
+        }
     }
+
+
+
+
+    // 2. 快速排序
+    private static void subSort(int[] data, int begin, int end) {
+        if(begin < end) {
+            int base = data[begin];
+            int low = begin;
+            int high = end + 1;
+            while(true) {
+                while(low < end && data[++low] - base <=0);
+                while(high > begin && data[--high] - base >=0);
+                if(low < high) {
+                    ArrayUtil.swap(data, low, high);
+                } else {
+                    break;
+                }
+            }
+            ArrayUtil.swap(data, begin, high);
+
+            subSort(data, begin, high - 1);
+            subSort(data, high + 1, end);
+        }
+    }
+    public static void quickSort(int[] data) {
+
+        System.out.println("2. quickSort...");
+
+        subSort(data, 0, data.length - 1);
+    }
+
+
+
+
+
 
     // 数组遍历输出
     public void print(int[] arr) {
